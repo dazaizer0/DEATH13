@@ -1050,8 +1050,8 @@ face_ids = PackedInt32Array(0, 1, 2, 3, 4, 5)
 [node name="test_level" type="Node3D"]
 
 [node name="VoxelGI" type="VoxelGI" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.999976, -0.00692852, 0, 0.00692852, 0.999976, 5.44334, 5.50288, 8.70434)
-size = Vector3(24.2042, 7.71436, 28.5102)
+transform = Transform3D(1, 0, 0, 0, 0.999976, -0.00692852, 0, 0.00692852, 0.999976, -6.41256, 5.20655, 6.10523)
+size = Vector3(50.2235, 8.34302, 34.1664)
 data = ExtResource("1_3q5ls")
 
 [node name="WorldEnvironment" parent="." instance=ExtResource("1_ido8g")]
