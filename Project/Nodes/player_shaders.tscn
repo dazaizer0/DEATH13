@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://clr1105al6cjj"]
+
+[ext_resource type="Shader" path="res://Project/Shaders/dithering.gdshader" id="1_1ibcp"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ta8n0"]
+shader = ExtResource("1_1ibcp")
+shader_parameter/contrast = 2.0
+shader_parameter/brightness = 0.0
+shader_parameter/uTime1 = 1.0
+shader_parameter/uTime2 = 2.0
+shader_parameter/uTime3 = 4.0
+shader_parameter/colors = 8.0
+
+[node name="Shaders" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+process_mode = 4
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+process_mode = 4
+material = SubResource("ShaderMaterial_ta8n0")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://vi1etk0jktks"]
+
+[ext_resource type="Texture2D" uid="uid://cbcp0qyet4hjr" path="res://Project/Textures/vz_classic_land_down.png" id="1_eeow7"]
+
+[resource]
+albedo_texture = ExtResource("1_eeow7")
