@@ -116,9 +116,9 @@ func _physics_process(delta):
 		
 		# CAMERA ROTATION -----------------------------------------------
 		if Input.is_action_pressed("a"):
-			camera.rotation.z = lerp(camera.rotation.z, 0.03, 0.3)
+			camera.rotation.z = lerp(camera.rotation.z, 0.04, 0.3)
 		elif Input.is_action_pressed("d"):
-			camera.rotation.z = lerp(camera.rotation.z, -0.03, 0.3)
+			camera.rotation.z = lerp(camera.rotation.z, -0.04, 0.3)
 		else:
 			camera.rotation.z = lerp(camera.rotation.z, 0.0, 0.3)
 		
