@@ -1,0 +1,7 @@
+[gd_resource type="ORMMaterial3D" load_steps=2 format=3 uid="uid://dy36khd04dee7"]
+
+[ext_resource type="Texture2D" uid="uid://cb1v6k5sohm8p" path="res://Project/Textures/white.png" id="1_lwndk"]
+
+[resource]
+albedo_texture = ExtResource("1_lwndk")
+uv1_scale = Vector3(0.375, 0.375, 0.375)

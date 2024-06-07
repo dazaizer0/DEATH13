@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://vi1etk0jktks"]
+
+[ext_resource type="Texture2D" uid="uid://b8mmqeiaqmax6" path="res://Project/Textures/retro_water.png" id="1_o81i1"]
+
+[resource]
+albedo_texture = ExtResource("1_o81i1")
+metallic = 0.1
+emission_energy_multiplier = 16.0
+uv1_scale = Vector3(0.32, 0.32, 0.32)
