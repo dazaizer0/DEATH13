@@ -6,4 +6,6 @@
 albedo_texture = ExtResource("1_o81i1")
 metallic = 0.1
 emission_energy_multiplier = 16.0
+anisotropy_enabled = true
+anisotropy = 0.4
 uv1_scale = Vector3(0.32, 0.32, 0.32)

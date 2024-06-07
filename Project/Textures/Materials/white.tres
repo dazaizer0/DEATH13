@@ -4,4 +4,7 @@
 
 [resource]
 albedo_texture = ExtResource("1_lwndk")
+clearcoat_enabled = true
+anisotropy_enabled = true
+anisotropy = 0.6
 uv1_scale = Vector3(0.375, 0.375, 0.375)

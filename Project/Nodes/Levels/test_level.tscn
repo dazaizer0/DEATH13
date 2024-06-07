@@ -1176,14 +1176,30 @@ face_ids = PackedInt32Array(0, 1, 2, 3, 4, 5)
 
 [node name="DirectionalLight3D2" type="DirectionalLight3D" parent="WorldEnvironment"]
 transform = Transform3D(1, 0, 0, 0, 0.674508, 0.738267, 0, -0.738267, 0.674508, -0.046608, 6.8859, 0)
-light_energy = 0.25
+light_energy = 0.0
 light_bake_mode = 1
 
 [node name="SpotLight3D" type="SpotLight3D" parent="WorldEnvironment"]
-transform = Transform3D(1, 0, 0, 0, -0.975508, 0.219965, 0, -0.219965, -0.975508, 12.298, 6.12816, 3.47174)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 4.46401, 10.2442, 14.6032)
 light_color = Color(0.352941, 0.862745, 1, 1)
-spot_range = 17.3982
-spot_angle = 35.8029
+light_energy = 1.6
+light_indirect_energy = 7.588
+light_volumetric_fog_energy = 0.0
+light_specular = 0.4
+light_bake_mode = 1
+spot_range = 19.2072
+spot_angle = 79.2049
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="WorldEnvironment"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 6.45117, 10.4878, -0.464617)
+light_color = Color(0.352941, 0.862745, 1, 1)
+light_energy = 1.6
+light_indirect_energy = 7.588
+light_volumetric_fog_energy = 0.0
+light_specular = 0.4
+light_bake_mode = 1
+spot_range = 19.2072
+spot_angle = 79.2049
 
 [node name="CyclopsBlocks" type="Node3D" parent="."]
 script = ExtResource("2_21a4e")
@@ -1478,8 +1494,8 @@ materials = Array[Material]([ExtResource("7_r1ofl")])
 block_data = SubResource("Resource_f6emj")
 
 [node name="VoxelGI" type="VoxelGI" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.999976, -0.00692852, 0, 0.00692852, 0.999976, -6.41256, 5.1808, 9.82233)
-size = Vector3(50.2235, 8.34302, 41.6008)
+transform = Transform3D(1, 0, 0, 0, 0.999976, -0.00692852, 0, 0.00692852, 0.999976, -6.41256, 13.4785, 9.87982)
+size = Vector3(50.2235, 24.9388, 41.6008)
 data = ExtResource("1_3q5ls")
 
 [node name="Player" parent="." instance=ExtResource("5_6wosg")]
