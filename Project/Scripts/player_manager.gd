@@ -22,6 +22,9 @@ var bob_t = 0.0
 var steps_timer = 0.0
 var dash_remain = 1
 
+var temp_paused = false
+var crouching = false
+
 var is_sprinting
 var direction
 var speed
@@ -30,8 +33,6 @@ var speed
 @onready var head = $Head
 @onready var camera = $Head/Camera3D
 @onready var head_raycast = $Head/RayCast3D
-@onready var temp_paused = false
-@onready var crouching = false
 
 # MOUSE MODE
 func _ready():
@@ -39,8 +40,12 @@ func _ready():
 
 func _process(delta):
 	# QUIT
-		if Input.is_action_just_pressed("quit"):
-			get_tree().quit()
+	if Input.is_action_just_pressed("quit"):
+		get_tree().quit()
+	
+	# fullscreen
+	if Input.is_action_just_pressed("m"):
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_MAXIMIZED)
 
 # CAMERA ROTATION
 func _unhandled_input(event):
