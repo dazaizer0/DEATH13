@@ -21,7 +21,6 @@ config/icon="res://icon.svg"
 [autoload]
 
 CyclopsAutoload="*res://addons/cyclops_level_builder/cyclops_global_scene.tscn"
-ArenaManager="*res://Project/Scripts/arena_manager.gd"
 
 [editor]
 

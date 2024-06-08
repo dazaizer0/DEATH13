@@ -1,11 +1,99 @@
 extends Node3D
 
 var state = 1
-# Called when the node enters the scene tree for the first time.
+
+var arena = [
+ 8, 8, 9, 8, 8, 8, 9, 8, 8,
+ 7, 1, 1, 1, 7, 1, 1, 1, 7,
+ 6, 1, 1, 1, 6, 1, 1, 1, 6,
+ 5, 1, 1, 1, 5, 1, 1, 1, 5,
+ 4, 4, 4, 4, 4, 5, 6, 5, 4,
+ 3, 1, 1, 1, 4, 3, 2, 1, 4,
+ 2, 1, 1, 1, 4, 1, 2, 3, 4,
+ 1, 1, 1, 1, 4, 1, 1, 1, 4,
+ 1, 1, 1, 1, 5, 6, 7, 8, 9
+]
+
 func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+	$Column1.Y = arena[0]
+	$Column2.Y = arena[1]
+	$Column3.Y = arena[2]
+	$Column4.Y = arena[3]
+	$Column5.Y = arena[4]
+	$Column6.Y = arena[5]
+	$Column7.Y = arena[6]
+	$Column8.Y = arena[7]
+	$Column9.Y = arena[8]
+	$Column10.Y = arena[9]
+	$Column11.Y = arena[10]
+	$Column12.Y = arena[11]
+	$Column13.Y = arena[12]
+	$Column14.Y = arena[13]
+	$Column15.Y = arena[14]
+	$Column16.Y = arena[15]
+	$Column17.Y = arena[16]
+	$Column18.Y = arena[17]
+	$Column19.Y = arena[18]
+	$Column20.Y = arena[19]
+	$Column21.Y = arena[20]
+	$Column22.Y = arena[21]
+	$Column23.Y = arena[22]
+	$Column24.Y = arena[23]
+	$Column25.Y = arena[24]
+	$Column26.Y = arena[25]
+	$Column27.Y = arena[26]
+	$Column28.Y = arena[27]
+	$Column29.Y = arena[28]
+	$Column30.Y = arena[29]
+	$Column31.Y = arena[30]
+	$Column32.Y = arena[31]
+	$Column33.Y = arena[32]
+	$Column34.Y = arena[33]
+	$Column35.Y = arena[34]
+	$Column36.Y = arena[35]
+	$Column37.Y = arena[36]
+	$Column38.Y = arena[37]
+	$Column39.Y = arena[38]
+	$Column40.Y = arena[39]
+	$Column41.Y = arena[40]
+	$Column42.Y = arena[41]
+	$Column43.Y = arena[42]
+	$Column44.Y = arena[43]
+	$Column45.Y = arena[44]
+	$Column46.Y = arena[45]
+	$Column47.Y = arena[46]
+	$Column48.Y = arena[47]
+	$Column49.Y = arena[48]
+	$Column50.Y = arena[49]
+	$Column51.Y = arena[50]
+	$Column52.Y = arena[51]
+	$Column53.Y = arena[52]
+	$Column54.Y = arena[53]
+	$Column55.Y = arena[54]
+	$Column56.Y = arena[55]
+	$Column57.Y = arena[56]
+	$Column58.Y = arena[57]
+	$Column59.Y = arena[58]
+	$Column60.Y = arena[59]
+	$Column61.Y = arena[60]
+	$Column62.Y = arena[61]
+	$Column63.Y = arena[62]
+	$Column64.Y = arena[63]
+	$Column65.Y = arena[64]
+	$Column66.Y = arena[65]
+	$Column67.Y = arena[66]
+	$Column68.Y = arena[67]
+	$Column69.Y = arena[68]
+	$Column70.Y = arena[69]
+	$Column71.Y = arena[70]
+	$Column72.Y = arena[71]
+	$Column73.Y = arena[72]
+	$Column74.Y = arena[73]
+	$Column75.Y = arena[74]
+	$Column76.Y = arena[75]
+	$Column77.Y = arena[76]
+	$Column78.Y = arena[77]
+	$Column79.Y = arena[78]
+	$Column80.Y = arena[79]
+	$Column81.Y = arena[80]
 	pass
