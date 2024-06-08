@@ -1,0 +1,72 @@
+[gd_scene load_steps=9 format=3 uid="uid://6r44vxw80cp"]
+
+[ext_resource type="PackedScene" uid="uid://c4uh4uwl0ju0h" path="res://Project/Nodes/world_environment.tscn" id="1_6ixhm"]
+[ext_resource type="Script" path="res://addons/cyclops_level_builder/nodes/cyclops_blocks.gd" id="2_uyh4b"]
+[ext_resource type="Script" path="res://addons/cyclops_level_builder/nodes/cyclops_convex_block.gd" id="3_rw3nw"]
+[ext_resource type="Script" path="res://addons/cyclops_level_builder/resources/convex_block_data.gd" id="4_a5sxw"]
+[ext_resource type="Material" uid="uid://vi1etk0jktks" path="res://Project/Textures/Materials/water.tres" id="5_kogq0"]
+[ext_resource type="PackedScene" uid="uid://dlrt726084k2y" path="res://Project/Nodes/player.tscn" id="6_xq2ht"]
+
+[sub_resource type="Resource" id="Resource_48r4i"]
+script = ExtResource("4_a5sxw")
+selected = false
+active = false
+collsion = true
+vertex_points = PackedVector3Array(47, 8, 0, 47, 8, -89, 47, 7, -89, 47, 7, 0, -47, 7, -89, -47, 8, -89, -47, 7, 0, -47, 8, 0)
+vertex_selected = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0)
+active_vertex = -1
+edge_vertex_indices = PackedInt32Array(0, 1, 1, 2, 2, 3, 3, 0, 4, 2, 1, 5, 5, 4, 6, 3, 4, 6, 7, 5, 0, 7, 7, 6)
+edge_selected = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+active_edge = -1
+edge_face_indices = PackedInt32Array(0, 3, 0, 1, 0, 2, 0, 5, 1, 2, 1, 3, 1, 4, 2, 5, 2, 4, 3, 4, 3, 5, 4, 5)
+face_vertex_count = PackedInt32Array(4, 4, 4, 4, 4, 4)
+face_vertex_indices = PackedInt32Array(0, 1, 2, 3, 4, 2, 1, 5, 6, 3, 2, 4, 7, 5, 1, 0, 7, 6, 4, 5, 7, 0, 3, 6)
+face_material_indices = PackedInt32Array(-1, -1, -1, -1, -1, -1)
+face_uv_transform = Array[Transform2D]([Transform2D(1, 0, 0, 1, 0, 0), Transform2D(1, 0, 0, 1, 0, 0), Transform2D(1, 0, 0, 1, 0, 0), Transform2D(1, 0, 0, 1, 0, 0), Transform2D(1, 0, 0, 1, 0, 0), Transform2D(1, 0, 0, 1, 0, 0)])
+face_selected = PackedByteArray(0, 0, 0, 0, 0, 0)
+active_face = -1
+face_ids = PackedInt32Array(0, 1, 2, 3, 4, 5)
+
+[sub_resource type="Resource" id="Resource_0wqiq"]
+script = ExtResource("4_a5sxw")
+selected = false
+active = false
+collsion = true
+vertex_points = PackedVector3Array(-47, 9, 0, -47, 9, -47, 0, 9, -46, 0, 9, 1, 0, 8, -46, 0, 8, 1, -47, 8, 0, -47, 8, -47)
+vertex_selected = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0)
+active_vertex = -1
+edge_vertex_indices = PackedInt32Array(0, 1, 1, 2, 2, 3, 3, 0, 4, 5, 5, 3, 2, 4, 5, 6, 6, 0, 7, 6, 4, 7, 1, 7)
+edge_selected = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+active_edge = -1
+edge_face_indices = PackedInt32Array(0, 5, 0, 4, 0, 1, 0, 2, 1, 3, 1, 2, 1, 4, 2, 3, 2, 5, 3, 5, 3, 4, 4, 5)
+face_vertex_count = PackedInt32Array(4, 4, 4, 4, 4, 4)
+face_vertex_indices = PackedInt32Array(0, 1, 2, 3, 4, 5, 3, 2, 0, 3, 5, 6, 7, 6, 5, 4, 7, 4, 2, 1, 7, 1, 0, 6)
+face_material_indices = PackedInt32Array(0, -1, -1, -1, -1, -1)
+face_uv_transform = Array[Transform2D]([Transform2D(1, 0, 0, 1, 0, 0), Transform2D(1, 0, 0, 1, 0, 0), Transform2D(1, 0, 0, 1, 0, 0), Transform2D(1, 0, 0, 1, 0, 0), Transform2D(1, 0, 0, 1, 0, 0), Transform2D(1, 0, 0, 1, 0, 0)])
+face_selected = PackedByteArray(0, 0, 0, 0, 0, 0)
+active_face = -1
+face_ids = PackedInt32Array(0, 1, 2, 3, 4, 5)
+
+[node name="Arena" type="Node3D"]
+
+[node name="WorldEnvironment" parent="." instance=ExtResource("1_6ixhm")]
+
+[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="WorldEnvironment"]
+transform = Transform3D(1, 0, 0, 0, 0.674508, 0.738267, 0, -0.738267, 0.674508, -0.046608, 6.8859, 0)
+light_energy = 0.0
+light_bake_mode = 1
+
+[node name="CyclopsBlocks" type="Node3D" parent="."]
+script = ExtResource("2_uyh4b")
+
+[node name="Block_0" type="Node" parent="CyclopsBlocks"]
+script = ExtResource("3_rw3nw")
+block_data = SubResource("Resource_48r4i")
+
+[node name="Block_1" type="Node" parent="CyclopsBlocks"]
+script = ExtResource("3_rw3nw")
+materials = Array[Material]([ExtResource("5_kogq0")])
+block_data = SubResource("Resource_0wqiq")
+
+[node name="Player" parent="." instance=ExtResource("6_xq2ht")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.9339, 14.2584, -23.0146)
