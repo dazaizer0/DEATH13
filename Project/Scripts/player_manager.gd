@@ -25,6 +25,7 @@ var dash_remain = 1
 var temp_paused = false
 var crouching = false
 
+var jumping 
 var is_sprinting
 var direction
 var speed
@@ -69,8 +70,10 @@ func _physics_process(delta):
 		if Input.is_action_just_pressed("jump") and is_on_floor():
 			if crouching:
 				velocity.y = JUMP_FORCE * 1.25
+				jumping = true
 			else:
 				velocity.y = JUMP_FORCE
+				jumping = true
 			
 		if Input.is_action_just_pressed("jump") and !is_on_floor() and dash_remain == 1:
 			velocity += Vector3(DASH_FORCE * direction.x, DASH_FORCE * direction.y, DASH_FORCE * direction.z)
@@ -78,6 +81,7 @@ func _physics_process(delta):
 			
 		if is_on_floor():
 			dash_remain = 1
+			jumping = false
 			
 		# SLIDE/CROUCH -------------------------------------------------------------------------------
 		if Input.is_action_just_pressed("crouch"):
@@ -132,11 +136,11 @@ func _physics_process(delta):
 		
 		# CAMERA ROTATION -----------------------------------------------
 		if Input.is_action_pressed("a"):
-			camera.rotation.z = lerp(camera.rotation.z, 0.045, 0.3)
+			camera.rotation.z = lerp(camera.rotation.z, 0.045, 0.25)
 		elif Input.is_action_pressed("d"):
-			camera.rotation.z = lerp(camera.rotation.z, -0.045, 0.3)
+			camera.rotation.z = lerp(camera.rotation.z, -0.045, 0.25)
 		else:
-			camera.rotation.z = lerp(camera.rotation.z, 0.0, 0.5)
+			camera.rotation.z = lerp(camera.rotation.z, 0.0, 0.25)
 		
 		# MOVE
 		move_and_slide()

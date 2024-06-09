@@ -21,14 +21,14 @@ func _process(delta):
 		if stepstimer > stepsdelay:
 			if $"..".is_on_floor() and !$"..".crouching:
 				if $"..".is_sprinting:
-					$Steps.pitch_scale = 1.2
+					$Steps.pitch_scale = 1.16
 					$Steps.play()
 				else:
-					$Steps.pitch_scale = 0.9
+					$Steps.pitch_scale = 0.92
 					$Steps.play()
 			stepstimer = 0.0
 		
-	if Input.is_action_pressed("crouch"):
+	if Input.is_action_pressed("crouch") and $"..".is_on_floor():
 		if slidetimer >= slidedelay:
 			$Slide.play()
 			slidetimer = 0.0
