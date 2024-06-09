@@ -2,7 +2,7 @@ extends CharacterBody3D
 
 # CONSTANTS
 const SENSITIVITY = 0.0036
-const JUMP_FORCE = 8
+@export var JUMP_FORCE = 11
 const SPRINT_SPEED = 10
 const WALK_SPEED = 8
 const SPEED = 8
@@ -79,7 +79,7 @@ func _physics_process(delta):
 			crouching = false
 		
 		if crouching:
-			scale.y = lerp(scale.y, 0.4, 0.2)
+			scale.y = lerp(scale.y, 0.3, 0.2)
 		else:
 			if !head_raycast.is_colliding():
 				scale.y = lerp(scale.y, 1.0, 0.2)
