@@ -1,7 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://dlrt726084k2y"]
+[gd_scene load_steps=8 format=3 uid="uid://dlrt726084k2y"]
 
 [ext_resource type="Script" path="res://Project/Scripts/player_manager.gd" id="1_fvnkc"]
 [ext_resource type="PackedScene" uid="uid://clr1105al6cjj" path="res://Project/Nodes/player_shaders.tscn" id="2_b6apy"]
+[ext_resource type="Script" path="res://Project/Scripts/player_sounds_manager.gd" id="3_oa228"]
+[ext_resource type="AudioStream" uid="uid://benqv7ufovr2p" path="res://Project/Sounds/steps.wav" id="4_1kn6e"]
+[ext_resource type="AudioStream" uid="uid://cxn167atm60cd" path="res://Project/Sounds/jump.wav" id="4_gngnu"]
+[ext_resource type="AudioStream" uid="uid://mrjd4hu8ixky" path="res://Project/Sounds/slide.wav" id="4_jlm6w"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wrw5e"]
 height = 3.0
@@ -29,3 +33,20 @@ process_mode = 4
 offset_left = 3.0
 offset_top = -1.0
 offset_bottom = -1.0
+
+[node name="Sounds" type="Node3D" parent="."]
+script = ExtResource("3_oa228")
+
+[node name="Steps" type="AudioStreamPlayer3D" parent="Sounds"]
+stream = ExtResource("4_1kn6e")
+volume_db = -22.0
+pitch_scale = 0.9
+
+[node name="Jump" type="AudioStreamPlayer3D" parent="Sounds"]
+stream = ExtResource("4_gngnu")
+volume_db = -22.0
+
+[node name="Slide" type="AudioStreamPlayer3D" parent="Sounds"]
+stream = ExtResource("4_jlm6w")
+volume_db = -30.0
+pitch_scale = 0.7
