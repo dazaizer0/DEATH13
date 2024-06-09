@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
 # CONSTANTS
-const SENSITIVITY = 0.0036
+const SENSITIVITY = 0.0024
 @export var JUMP_FORCE = 11
 const SPRINT_SPEED = 10
 const WALK_SPEED = 8
@@ -43,6 +43,10 @@ func _process(delta):
 	if Input.is_action_just_pressed("quit"):
 		get_tree().quit()
 	
+	# restart
+	if Input.is_action_just_pressed("r"):
+		get_tree().reload_current_scene()
+	
 	# fullscreen
 	if Input.is_action_just_pressed("m"):
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_MAXIMIZED)
@@ -63,7 +67,10 @@ func _physics_process(delta):
 
 		# JUMP -------------------------------------------------------------------------------
 		if Input.is_action_just_pressed("jump") and is_on_floor():
-			velocity.y = JUMP_FORCE
+			if crouching:
+				velocity.y = JUMP_FORCE * 1.25
+			else:
+				velocity.y = JUMP_FORCE
 			
 		if Input.is_action_just_pressed("jump") and !is_on_floor() and dash_remain == 1:
 			velocity += Vector3(DASH_FORCE * direction.x, DASH_FORCE * direction.y, DASH_FORCE * direction.z)
@@ -73,7 +80,8 @@ func _physics_process(delta):
 			dash_remain = 1
 			
 		# SLIDE/CROUCH -------------------------------------------------------------------------------
-		if Input.is_action_pressed("crouch"):
+		if Input.is_action_just_pressed("crouch"):
+			velocity = direction * SPRINT_SPEED * 1.5
 			crouching = true
 		elif Input.is_action_just_released("crouch"):
 			crouching = false
@@ -88,10 +96,12 @@ func _physics_process(delta):
 		if Input.is_action_pressed("sprint"):
 			speed = SPRINT_SPEED
 			is_sprinting = true
-			
 		else:
 			speed = WALK_SPEED
 			is_sprinting = false
+		
+		if is_sprinting and speed >= 15:
+			speed = 15
 	
 		# MOVEMENT INPUTS
 		var input_dir = Input.get_vector("a", "d", "w", "s")
@@ -109,7 +119,7 @@ func _physics_process(delta):
 			else:
 				velocity.x = lerp(velocity.x, direction.x * speed, delta * 3.0)
 				velocity.z = lerp(velocity.z, direction.z * speed, delta * 3.0)
-		
+			
 		# HEAD BOOBING ------------------------------------------
 		if !crouching:
 			bob_t += delta * velocity.length() * float(is_on_floor())
@@ -122,11 +132,11 @@ func _physics_process(delta):
 		
 		# CAMERA ROTATION -----------------------------------------------
 		if Input.is_action_pressed("a"):
-			camera.rotation.z = lerp(camera.rotation.z, 0.04, 0.3)
+			camera.rotation.z = lerp(camera.rotation.z, 0.045, 0.3)
 		elif Input.is_action_pressed("d"):
-			camera.rotation.z = lerp(camera.rotation.z, -0.04, 0.3)
+			camera.rotation.z = lerp(camera.rotation.z, -0.045, 0.3)
 		else:
-			camera.rotation.z = lerp(camera.rotation.z, 0.0, 0.3)
+			camera.rotation.z = lerp(camera.rotation.z, 0.0, 0.5)
 		
 		# MOVE
 		move_and_slide()

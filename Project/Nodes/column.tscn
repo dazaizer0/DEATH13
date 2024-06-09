@@ -12,7 +12,7 @@ size = Vector3(5, 2, 5)
 script = ExtResource("1_hc48b")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(5, 0, 0, 0, 2.08, 0, 0, 0, 5, 0, 0, 0)
+transform = Transform3D(5, 0, 0, 0, 2, 0, 0, 0, 5, 0, 0, 0)
 material_override = ExtResource("1_ybwws")
 mesh = SubResource("BoxMesh_kmpx7")
 

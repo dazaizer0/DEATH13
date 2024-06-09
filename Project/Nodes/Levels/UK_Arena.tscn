@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bgt4oo8fkgb1r"]
+[gd_scene load_steps=12 format=3 uid="uid://bgt4oo8fkgb1r"]
 
 [ext_resource type="PackedScene" uid="uid://c4uh4uwl0ju0h" path="res://Project/Nodes/world_environment.tscn" id="1_2iv5e"]
 [ext_resource type="PackedScene" uid="uid://dlrt726084k2y" path="res://Project/Nodes/player.tscn" id="2_dk6bc"]
@@ -7,6 +7,7 @@
 [ext_resource type="VoxelGIData" uid="uid://c7ack78lpkbg0" path="res://Project/Nodes/Levels/UK_Arena.VoxelGI_data.res" id="4_qyjg7"]
 [ext_resource type="Shader" path="res://Project/Shaders/moving_texture.gdshader" id="7_eqm60"]
 [ext_resource type="Texture2D" uid="uid://b8mmqeiaqmax6" path="res://Project/Textures/retro_water.png" id="8_ctg57"]
+[ext_resource type="PackedScene" uid="uid://dgw52yw4m6ir4" path="res://Project/Nodes/Cube.tscn" id="8_xi0q4"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_dx468"]
 
@@ -46,9 +47,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.29474, 0)
 script = ExtResource("4_e1753")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="VoxelGI/Kwas"]
-transform = Transform3D(45, 0, 0, 0, 1, 0, 0, 0, 45, 0, 0, 0)
+transform = Transform3D(44.9, 0, 0, 0, 1, 0, 0, 0, 44.9, 0, 0, 0)
 mesh = SubResource("BoxMesh_dx468")
 surface_material_override/0 = SubResource("ShaderMaterial_cb7ar")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="VoxelGI/Kwas"]
 shape = SubResource("BoxShape3D_3yhjr")
+
+[node name="Cube" parent="VoxelGI" instance=ExtResource("8_xi0q4")]
+transform = Transform3D(0.956979, 0.281372, 0.0708624, -0.288892, 0.901164, 0.323179, 0.0270747, -0.329747, 0.943681, 0, 12.5, -15)
