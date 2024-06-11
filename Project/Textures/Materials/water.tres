@@ -8,4 +8,4 @@ metallic = 0.1
 emission_energy_multiplier = 16.0
 anisotropy_enabled = true
 anisotropy = 0.4
-uv1_scale = Vector3(2, 2, 2)
+uv1_scale = Vector3(0.5, 0.5, 0.5)

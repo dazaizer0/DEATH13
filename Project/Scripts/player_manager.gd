@@ -2,7 +2,7 @@ extends CharacterBody3D
 
 # CONSTANTS
 const SENSITIVITY = 0.0024
-@export var JUMP_FORCE = 11
+@export var JUMP_FORCE = 8
 const SPRINT_SPEED = 10
 const WALK_SPEED = 8
 const SPEED = 8
@@ -82,10 +82,12 @@ func _physics_process(delta):
 		if is_on_floor():
 			dash_remain = 1
 			jumping = false
+		if !is_on_floor():
+			jumping = true
 			
 		# SLIDE/CROUCH -------------------------------------------------------------------------------
 		if Input.is_action_just_pressed("crouch"):
-			velocity = direction * SPRINT_SPEED * 1.5
+			velocity = direction * SPRINT_SPEED
 			crouching = true
 		elif Input.is_action_just_released("crouch"):
 			crouching = false
