@@ -1,12 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://dlrt726084k2y"]
+[gd_scene load_steps=7 format=3 uid="uid://dlrt726084k2y"]
 
 [ext_resource type="Script" path="res://Project/Scripts/player_manager.gd" id="1_fvnkc"]
 [ext_resource type="PackedScene" uid="uid://clr1105al6cjj" path="res://Project/Nodes/player_shaders.tscn" id="2_b6apy"]
 [ext_resource type="Script" path="res://Project/Scripts/player_sounds_manager.gd" id="3_oa228"]
-[ext_resource type="AudioStream" uid="uid://benqv7ufovr2p" path="res://Project/Sounds/steps.wav" id="4_1kn6e"]
+[ext_resource type="AudioStream" uid="uid://brwc5r03d3my2" path="res://Project/Sounds/robot-steps.wav" id="4_cb1fk"]
 [ext_resource type="AudioStream" uid="uid://cxn167atm60cd" path="res://Project/Sounds/jump.wav" id="4_gngnu"]
-[ext_resource type="AudioStream" uid="uid://mrjd4hu8ixky" path="res://Project/Sounds/slide.wav" id="4_jlm6w"]
-[ext_resource type="AudioStream" uid="uid://bb64m0gtp6pcc" path="res://Project/Sounds/dash2.wav" id="7_eavif"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wrw5e"]
 height = 2.5
@@ -14,7 +12,7 @@ height = 2.5
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_fvnkc")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="Collider" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_wrw5e")
 
 [node name="Head" type="Node3D" parent="."]
@@ -24,10 +22,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 fov = 80.0
 
 [node name="Aim" type="RayCast3D" parent="Head/Camera3D"]
+visible = false
 target_position = Vector3(0, 0, -3.1)
-
-[node name="RayCast3D" type="RayCast3D" parent="Head"]
-target_position = Vector3(0, 2, 0)
 
 [node name="Shaders" parent="." instance=ExtResource("2_b6apy")]
 process_mode = 4
@@ -39,7 +35,7 @@ offset_bottom = -1.0
 script = ExtResource("3_oa228")
 
 [node name="Steps" type="AudioStreamPlayer3D" parent="Sounds"]
-stream = ExtResource("4_1kn6e")
+stream = ExtResource("4_cb1fk")
 volume_db = -27.0
 pitch_scale = 0.9
 
@@ -47,11 +43,3 @@ pitch_scale = 0.9
 stream = ExtResource("4_gngnu")
 volume_db = -29.0
 pitch_scale = 0.85
-
-[node name="Slide" type="AudioStreamPlayer3D" parent="Sounds"]
-stream = ExtResource("4_jlm6w")
-volume_db = -38.0
-pitch_scale = 0.66
-
-[node name="Dash" type="AudioStreamPlayer3D" parent="Sounds"]
-stream = ExtResource("7_eavif")
