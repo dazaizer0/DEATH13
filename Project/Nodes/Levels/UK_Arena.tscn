@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://c4uh4uwl0ju0h" path="res://Project/Nodes/world_environment.tscn" id="1_2iv5e"]
 [ext_resource type="PackedScene" uid="uid://dlrt726084k2y" path="res://Project/Nodes/player.tscn" id="2_dk6bc"]
 [ext_resource type="PackedScene" uid="uid://dlgj1f0x7s2dx" path="res://Project/Nodes/arena.tscn" id="3_gh4w3"]
-[ext_resource type="Script" path="res://Project/Scripts/kwas.gd" id="4_e1753"]
+[ext_resource type="Script" path="res://Project/Scripts/water.gd" id="4_e1753"]
 [ext_resource type="VoxelGIData" uid="uid://c7ack78lpkbg0" path="res://Project/Rendering/UK_Arena.VoxelGI_data.res" id="4_qyjg7"]
 [ext_resource type="Shader" path="res://Project/Shaders/moving_texture.gdshader" id="7_eqm60"]
 [ext_resource type="Texture2D" uid="uid://b8mmqeiaqmax6" path="res://Project/Textures/retro_water.png" id="8_ctg57"]

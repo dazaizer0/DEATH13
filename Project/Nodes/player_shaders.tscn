@@ -4,11 +4,11 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ta8n0"]
 shader = ExtResource("1_1ibcp")
-shader_parameter/contrast = 2.0
-shader_parameter/brightness = 0.0
-shader_parameter/uTime1 = 1.0
-shader_parameter/uTime2 = 2.0
-shader_parameter/uTime3 = 4.0
+shader_parameter/contrast = 1.4
+shader_parameter/brightness = -0.1
+shader_parameter/uTime1 = 0.5
+shader_parameter/uTime2 = 1.0
+shader_parameter/uTime3 = 1.5
 shader_parameter/colors = 8.0
 
 [node name="Shaders" type="Control"]

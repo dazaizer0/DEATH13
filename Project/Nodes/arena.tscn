@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://dlgj1f0x7s2dx"]
 
-[ext_resource type="Script" path="res://Project/Scripts/arena_manager.gd" id="1_j1gmk"]
+[ext_resource type="Script" path="res://Project/Scripts/Arena/arena_manager.gd" id="1_j1gmk"]
 [ext_resource type="PackedScene" uid="uid://oojlna5p5hgm" path="res://Project/Nodes/column.tscn" id="1_ooxnl"]
 [ext_resource type="Material" uid="uid://rdhrhgrb78ls" path="res://addons/cyclops_level_builder/materials/grid.tres" id="2_to021"]
 

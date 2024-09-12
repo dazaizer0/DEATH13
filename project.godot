@@ -23,6 +23,10 @@ config/icon="res://icon.svg"
 
 window/size/mode=3
 
+[dotnet]
+
+project/assembly_name="DEATH13-GIT"
+
 [editor]
 
 movie_writer/fps=40
